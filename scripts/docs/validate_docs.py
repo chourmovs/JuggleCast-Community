@@ -84,7 +84,7 @@ readme = (ROOT / "README.md").read_text(
 if version:
     install_fragment = (
         "https://raw.githubusercontent.com/"
-        "chourmovs/FlowCast-Community/"
+        "chourmovs/JuggleCast-Community/"
         f"v{version}/install.sh"
         " | sudo bash -s -- --version "
         f"{version}"
@@ -96,9 +96,11 @@ if version:
             "match version.env"
         )
 
-private_repo = re.compile(
-    r"github\.com/chourmovs/FlowCast"
-    r"(?:[./\s]|$)",
+forbidden_repository_url = re.compile(
+    r"github\.com/chourmovs/(?:"
+    r"JuggleCast(?:[./\s]|$)"
+    r"|FlowCast(?:-Community)?(?:[./\s]|$)"
+    r")",
     re.IGNORECASE,
 )
 
@@ -140,9 +142,9 @@ for path in markdown_files:
     text = path.read_text(encoding="utf-8")
     relative = path.relative_to(ROOT)
 
-    if private_repo.search(text):
+    if forbidden_repository_url.search(text):
         errors.append(
-            f"{relative}: private repository URL forbidden"
+            f"{relative}: private or retired repository URL forbidden"
         )
 
     if private_ip.search(text):

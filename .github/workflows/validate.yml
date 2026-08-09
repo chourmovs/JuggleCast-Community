@@ -144,8 +144,8 @@ jobs:
           set -euo pipefail
 
           urls=(
-            "https://github.com/chourmovs/FlowCast-Community/releases"
-            "https://github.com/chourmovs/FlowCast-Community/security"
+            "https://github.com/chourmovs/JuggleCast-Community/releases"
+            "https://github.com/chourmovs/JuggleCast-Community/security"
           )
 
           for url in "${urls[@]}"; do
@@ -308,7 +308,7 @@ jobs:
         run: |
           set -euo pipefail
 
-          site_url="https://chourmovs.github.io/FlowCast-Community"
+          site_url="https://chourmovs.github.io/JuggleCast-Community"
           sitemap_url="$site_url/sitemap-index.xml"
 
           grep \
@@ -372,7 +372,7 @@ jobs:
             "flowcast.spotycast.ovh" \
             dist
           then
-            echo "::error::Generated website still references the retired JuggleCast domain"
+            echo "::error::Generated website still references the retired FlowCast domain"
             exit 1
           fi
 
@@ -419,7 +419,7 @@ jobs:
             grep \
               --quiet \
               --fixed-strings \
-              '/FlowCast-Community/sitemap-index.xml' \
+              '/JuggleCast-Community/sitemap-index.xml' \
               "$page" || {
                 echo "::error::$page references an invalid sitemap path"
                 exit 1
@@ -434,8 +434,8 @@ jobs:
           set -euo pipefail
 
           invalid_patterns=(
-            '/FlowCast-Communityflowcast'
-            '/FlowCast-Communityscreenshots'
+            '/JuggleCast-Communityflowcast'
+            '/JuggleCast-Communityscreenshots'
             'src="/screenshots/'
             'href="/favicon'
             'src="/flowcast-mark'

@@ -8,10 +8,10 @@ Its scheduler, audio analysis services and dedicated Rust playout engine are des
 
 **Automate · Broadcast · Stay independent**
 
-[🎧 Listen to the live station](http://radio.chouproxai.duckdns.org/api/public/stations/rub-a-dub_mix) · [Install JuggleCast](#installation) · [Documentation](docs/README.md) · [Releases](https://github.com/chourmovs/FlowCast-Community/releases) · [Security](SECURITY.md) · [Support](SUPPORT.md)
+[🎧 Listen to the live station](http://radio.chouproxai.duckdns.org/api/public/stations/rub-a-dub_mix) · [Install JuggleCast](#installation) · [Documentation](docs/README.md) · [Releases](https://github.com/chourmovs/JuggleCast-Community/releases) · [Security](SECURITY.md) · [Support](SUPPORT.md)
 
-[![Release](https://img.shields.io/github/v/release/chourmovs/FlowCast-Community?display_name=tag)](https://github.com/chourmovs/FlowCast-Community/releases)
-[![Validate](https://github.com/chourmovs/FlowCast-Community/actions/workflows/validate.yml/badge.svg)](https://github.com/chourmovs/FlowCast-Community/actions/workflows/validate.yml)
+[![Release](https://img.shields.io/github/v/release/chourmovs/JuggleCast-Community?display_name=tag)](https://github.com/chourmovs/JuggleCast-Community/releases)
+[![Validate](https://github.com/chourmovs/JuggleCast-Community/actions/workflows/validate.yml/badge.svg)](https://github.com/chourmovs/JuggleCast-Community/actions/workflows/validate.yml)
 [![License: MIT](https://img.shields.io/badge/repository-MIT-22D3EE.svg)](LICENSE)
 ![Platform: Linux amd64](https://img.shields.io/badge/platform-linux%2Famd64-8B5CF6)
 ![Status: Community Preview](https://img.shields.io/badge/status-community%20preview-F59E0B)
@@ -20,7 +20,7 @@ Its scheduler, audio analysis services and dedicated Rust playout engine are des
 >
 > The public station page is powered by JuggleCast and lets you hear the playout engine while inspecting the current track and station activity.
 >
-> **[Open the live JuggleCast station →](https://chourmovs.github.io/FlowCast-Community/)**
+> **[Open the live JuggleCast station →](https://chourmovs.github.io/JuggleCast-Community/)**
 >
 > Availability is provided on a best-effort basis and may be interrupted during preview deployments or maintenance.
 
@@ -231,7 +231,7 @@ Pro is optional and separately licensed. Read [Community versus Pro](docs/commun
 **Requirements:** Linux amd64, Docker Engine, Docker Compose v2, 2 CPU cores, at least 4 GB RAM, 10 GB free disk plus media/backups, and free TCP ports **8080** for the control/player proxy and **8010** for direct Icecast access.
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/chourmovs/FlowCast-Community/v0.1.0-rc.9/install.sh | sudo bash -s -- --version 0.1.0-rc.9
+curl -fsSL https://raw.githubusercontent.com/chourmovs/JuggleCast-Community/v0.1.0-rc.9/install.sh | sudo bash -s -- --version 0.1.0-rc.9
 ```
 
 The tagged command installs the release declared in `version.env`. That file is the repository's single source of truth for the current JuggleCast Community release.
@@ -243,7 +243,7 @@ The installer writes `/opt/flowcast`, generates local credentials, pulls immutab
 ### Review the installer before execution
 
 ```bash
-curl -fsSLO https://raw.githubusercontent.com/chourmovs/FlowCast-Community/v0.1.0-rc.9/install.sh
+curl -fsSLO https://raw.githubusercontent.com/chourmovs/JuggleCast-Community/v0.1.0-rc.9/install.sh
 less install.sh
 sudo bash install.sh --version 0.1.0-rc.9
 ```
@@ -388,9 +388,9 @@ See [Acknowledgements](ACKNOWLEDGEMENTS.md) and [Third-party notices](THIRD_PART
 
 ## Contributing and support
 
-Use [issues](https://github.com/chourmovs/FlowCast-Community/issues) for reproducible, sanitised bugs and feature requests.
+Use [issues](https://github.com/chourmovs/JuggleCast-Community/issues) for reproducible, sanitised bugs and feature requests.
 
-Use [Discussions](https://github.com/chourmovs/FlowCast-Community/discussions), when enabled, for community questions.
+Use [Discussions](https://github.com/chourmovs/JuggleCast-Community/discussions), when enabled, for community questions.
 
 Read [Contributing](CONTRIBUTING.md) and [Support](SUPPORT.md).
 
