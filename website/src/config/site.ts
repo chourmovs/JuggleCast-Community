@@ -6,11 +6,11 @@ export const site = {
   slogan: 'Self-hosted scheduling and playout without Liquidsoap',
   signature: 'JuggleCast Radio Automation — self-hosted scheduling and playout without Liquidsoap.',
   description: 'JuggleCast Radio Automation is a self-hosted scheduling and Rust playout platform with configurable transitions, direct Icecast delivery, public station widgets, station statistics and media-aware backup/restore — without Liquidsoap.',
-  repository: 'https://github.com/chourmovs/FlowCast-Community',
-  docs: 'https://github.com/chourmovs/FlowCast-Community/tree/main/docs',
-  releases: 'https://github.com/chourmovs/FlowCast-Community/releases',
-  security: 'https://github.com/chourmovs/FlowCast-Community/blob/main/SECURITY.md',
-  support: 'https://github.com/chourmovs/FlowCast-Community/issues',
+  repository: 'https://github.com/chourmovs/JuggleCast-Community',
+  docs: 'https://github.com/chourmovs/JuggleCast-Community/tree/main/docs',
+  releases: 'https://github.com/chourmovs/JuggleCast-Community/releases',
+  security: 'https://github.com/chourmovs/JuggleCast-Community/blob/main/SECURITY.md',
+  support: 'https://github.com/chourmovs/JuggleCast-Community/issues',
   publicStationUrl: '',
 };
 
