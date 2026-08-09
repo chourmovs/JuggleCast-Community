@@ -493,4 +493,27 @@ jobs:
               exit 1
             }
 
+          expected_install_url="https://raw.githubusercontent.com/chourmovs/JuggleCast-Community/v$version/install.sh"
+
+          grep \
+            --recursive \
+            --quiet \
+            --fixed-strings \
+            "$expected_install_url" \
+            dist || {
+              echo "::error::Generated website does not contain the canonical JuggleCast installer URL"
+              exit 1
+            }
+
+          if grep \
+            --recursive \
+            --line-number \
+            --fixed-strings \
+            "chourmovs/FlowCast-Community" \
+            dist
+          then
+            echo "::error::Generated website still contains the retired repository slug"
+            exit 1
+          fi
+
           echo "Rendered release version passed: $version"
