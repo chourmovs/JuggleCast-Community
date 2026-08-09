@@ -6,7 +6,7 @@ x-common: &common
 
 services:
   storage-init:
-    image: ghcr.io/chourmovs/flowcast-engine:${FLOWCAST_VERSION:?FLOWCAST_VERSION is required}
+    image: ghcr.io/chourmovs/jugglecast-engine:${FLOWCAST_VERSION:?FLOWCAST_VERSION is required}
     user: "0:0"
     entrypoint: []
     command:
@@ -29,7 +29,7 @@ services:
 
   control:
     <<: *common
-    image: ghcr.io/chourmovs/flowcast-control:${FLOWCAST_VERSION:?FLOWCAST_VERSION is required}
+    image: ghcr.io/chourmovs/jugglecast-control:${FLOWCAST_VERSION:?FLOWCAST_VERSION is required}
     environment:
       ENGINE_CONTAINER: engine
       COMPOSE_SERVICE_ENGINE: engine
@@ -74,7 +74,7 @@ services:
 
   engine:
     <<: *common
-    image: ghcr.io/chourmovs/flowcast-engine:${FLOWCAST_VERSION:?FLOWCAST_VERSION is required}
+    image: ghcr.io/chourmovs/jugglecast-engine:${FLOWCAST_VERSION:?FLOWCAST_VERSION is required}
     command:
       - /usr/local/bin/flowcast-engine-entrypoint.sh
     environment:
@@ -107,7 +107,7 @@ services:
 
   audio-daemon:
     <<: *common
-    image: ghcr.io/chourmovs/flowcast-analyzer:${FLOWCAST_VERSION:?FLOWCAST_VERSION is required}
+    image: ghcr.io/chourmovs/jugglecast-analyzer:${FLOWCAST_VERSION:?FLOWCAST_VERSION is required}
     command:
       - /usr/local/bin/flowcast-analyzer-entrypoint.sh
     environment:
@@ -133,7 +133,7 @@ services:
 
   bliss:
     <<: *common
-    image: ghcr.io/chourmovs/flowcast-bliss:${FLOWCAST_VERSION:?FLOWCAST_VERSION is required}
+    image: ghcr.io/chourmovs/jugglecast-bliss:${FLOWCAST_VERSION:?FLOWCAST_VERSION is required}
     command:
       - /usr/local/bin/flowcast-bliss-entrypoint.sh
     volumes:
@@ -146,7 +146,7 @@ services:
 
   icecast:
     <<: *common
-    image: ghcr.io/chourmovs/flowcast-icecast:${FLOWCAST_VERSION:?FLOWCAST_VERSION is required}
+    image: ghcr.io/chourmovs/jugglecast-icecast:${FLOWCAST_VERSION:?FLOWCAST_VERSION is required}
     environment:
       ICECAST_SOURCE_PASSWORD: ${ICECAST_SOURCE_PASSWORD:?ICECAST_SOURCE_PASSWORD is required}
       ICECAST_RELAY_PASSWORD: ${ICECAST_RELAY_PASSWORD:?ICECAST_RELAY_PASSWORD is required}
