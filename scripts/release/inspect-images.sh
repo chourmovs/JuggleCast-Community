@@ -41,7 +41,7 @@ has_amd64() {
 }
 
 for service in "${services[@]}"; do
-  reference="ghcr.io/chourmovs/flowcast-$service:$VERSION"
+  reference="ghcr.io/chourmovs/jugglecast-$service:$VERSION"
   manifest="$tmp/$service.json"
   inspect_raw "$reference" "$manifest"
   jq -e . "$manifest" >/dev/null || { echo "Registry returned invalid manifest JSON for $reference" >&2; exit 1; }
@@ -57,4 +57,4 @@ done
 
 jq -n --arg version "$VERSION" --argjson platforms '["linux/amd64"]' \
   --arg c "$(cat "$tmp/control.digest")" --arg e "$(cat "$tmp/engine.digest")" --arg a "$(cat "$tmp/analyzer.digest")" --arg b "$(cat "$tmp/bliss.digest")" --arg i "$(cat "$tmp/icecast.digest")" \
-  '{version:$version,platforms:$platforms,images:{control:{reference:("ghcr.io/chourmovs/flowcast-control:"+$version),digest:$c},engine:{reference:("ghcr.io/chourmovs/flowcast-engine:"+$version),digest:$e},"audio-daemon":{reference:("ghcr.io/chourmovs/flowcast-analyzer:"+$version),digest:$a},bliss:{reference:("ghcr.io/chourmovs/flowcast-bliss:"+$version),digest:$b},icecast:{reference:("ghcr.io/chourmovs/flowcast-icecast:"+$version),digest:$i}}}'
+  '{version:$version,platforms:$platforms,images:{control:{reference:("ghcr.io/chourmovs/jugglecast-control:"+$version),digest:$c},engine:{reference:("ghcr.io/chourmovs/jugglecast-engine:"+$version),digest:$e},"audio-daemon":{reference:("ghcr.io/chourmovs/jugglecast-analyzer:"+$version),digest:$a},bliss:{reference:("ghcr.io/chourmovs/jugglecast-bliss:"+$version),digest:$b},icecast:{reference:("ghcr.io/chourmovs/jugglecast-icecast:"+$version),digest:$i}}}'
