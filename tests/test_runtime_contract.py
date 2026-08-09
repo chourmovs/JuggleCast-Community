@@ -1,4 +1,6 @@
 from copy import deepcopy
+import hashlib
+import json
 import importlib.util
 from pathlib import Path
 import shutil
@@ -209,9 +211,36 @@ class ReleaseArchiveRuntimeTests(unittest.TestCase):
         self.assertTrue(
             legacy_archive.is_file()
         )
+        archive_bytes = archive.read_bytes()
+
         self.assertEqual(
-            archive.read_bytes(),
+            archive_bytes,
             legacy_archive.read_bytes(),
+        )
+
+        archive_digest = hashlib.sha256(
+            archive_bytes
+        ).hexdigest()
+
+        release_manifest = json.loads(
+            (
+                dist / "release-manifest.json"
+            ).read_text(
+                encoding="utf-8"
+            )
+        )
+
+        self.assertEqual(
+            release_manifest["archive"]["filename"],
+            archive.name,
+        )
+        self.assertEqual(
+            release_manifest["archive"]["sha256"],
+            archive_digest,
+        )
+        self.assertRegex(
+            release_manifest["archive"]["sha256"],
+            r"^[0-9a-f]{64}$",
         )
 
         with tarfile.open(
