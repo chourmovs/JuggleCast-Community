@@ -1,6 +1,6 @@
-# FlowCast website
+# JuggleCast website
 
-Static Astro website for `https://flowcast.spotycast.ovh`.
+Static Astro website for `https://chourmovs.github.io/JuggleCast-Community/`.
 
 ## Local setup
 
@@ -16,10 +16,10 @@ To add a page, create an `.astro` file under `src/pages`, wrap it in `BaseLayout
 
 Only use reviewed, real and sanitized captures from `docs/assets/screenshots`. Copy (do not move) them into `public/screenshots`, give them descriptive names, retain their dimensions, and add a unique alt and caption in `ScreenshotGallery.astro`. Optimize to WebP only when visual inspection confirms there is no meaningful deterioration.
 
-## GitHub Pages and custom domain
+## GitHub Pages
 
-`.github/workflows/deploy-pages.yml` checks and builds `website/`, uploads `dist`, and deploys with the official Pages actions. `public/CNAME` declares `flowcast.spotycast.ovh`; DNS must point that name to `chourmovs.github.io`. In repository Settings > Pages, select GitHub Actions, verify the domain, wait for the certificate, and enable Enforce HTTPS.
+`.github/workflows/deploy-pages.yml` checks and builds `website/`, uploads `dist`, and deploys with the official Pages actions. The Astro project uses the `/JuggleCast-Community` base path. In repository Settings > Pages, select GitHub Actions and enable Enforce HTTPS when available.
 
 ## Search Console and sitemap
 
-After deployment and DNS verification, register the domain property in Google Search Console and submit `https://flowcast.spotycast.ovh/sitemap-index.xml`. Astro generates that sitemap during the build and `public/robots.txt` advertises it.
+Register the GitHub Pages URL in Google Search Console and submit `https://chourmovs.github.io/JuggleCast-Community/sitemap-index.xml`. Astro generates that sitemap during the build and `public/robots.txt` advertises it.
