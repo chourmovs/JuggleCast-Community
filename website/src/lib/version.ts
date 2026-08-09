@@ -94,5 +94,5 @@ export const flowcastTag =
 
 export const installCommand =
   `curl -fsSL https://raw.githubusercontent.com/` +
-  `chourmovs/FlowCast-Community/${flowcastTag}/install.sh` +
+  `chourmovs/JuggleCast-Community/${flowcastTag}/install.sh` +
   ` | sudo bash -s -- --version ${flowcastVersion}`;
