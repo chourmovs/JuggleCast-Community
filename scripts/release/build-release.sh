@@ -15,7 +15,8 @@ ROOT="$(
 
 DIST="$ROOT/dist"
 STAGE="$DIST/stage"
-ARCHIVE="$DIST/flowcast-community-v$VERSION.tar.gz"
+ARCHIVE="$DIST/jugglecast-community-v$VERSION.tar.gz"
+LEGACY_ARCHIVE="$DIST/flowcast-community-v$VERSION.tar.gz"
 
 rm -rf "$STAGE"
 mkdir -p "$STAGE"
@@ -94,7 +95,7 @@ jq \
     git_tag: $tag,
     platforms: ["linux/amd64"],
     archive: {
-      filename: ("flowcast-community-v" + $version + ".tar.gz"),
+      filename: ("jugglecast-community-v" + $version + ".tar.gz"),
       sha256: "pending"
     },
     images_lock: "images.lock"
@@ -114,6 +115,10 @@ tar \
   -czf "$ARCHIVE" \
   -C "$STAGE" \
   .
+
+# RC8 tooling may still request the historical filename. Both names contain
+# byte-identical content and remain covered by the published checksum file.
+cp -p "$ARCHIVE" "$LEGACY_ARCHIVE"
 
 EXTRACTED="$(mktemp -d)"
 
@@ -248,7 +253,7 @@ if "FLOWCAST_VERSION" in env_example.read_text(encoding="utf-8"):
     )
 PY
 
-sha256sum "$ARCHIVE" \
+sha256sum "$ARCHIVE" "$LEGACY_ARCHIVE" \
   | sed "s#  $DIST/#  #" \
   >"$DIST/checksums.sha256"
 
@@ -266,4 +271,4 @@ jq \
   >"$DIST/release-manifest.json"
 
 echo \
-  "Built FlowCast Community release archive: $ARCHIVE"
+  "Built JuggleCast Community release archives: $ARCHIVE and $LEGACY_ARCHIVE"
