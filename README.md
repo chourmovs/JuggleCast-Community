@@ -226,12 +226,12 @@ Pro is optional and separately licensed. Read [Community versus Pro](docs/commun
 
 ## Installation
 
-**Current validated release: `0.1.0-rc.8`.**
+**Current validated release: `0.1.0-rc.9`.**
 
 **Requirements:** Linux amd64, Docker Engine, Docker Compose v2, 2 CPU cores, at least 4 GB RAM, 10 GB free disk plus media/backups, and free TCP ports **8080** for the control/player proxy and **8010** for direct Icecast access.
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/chourmovs/FlowCast-Community/v0.1.0-rc.8/install.sh | sudo bash -s -- --version 0.1.0-rc.8
+curl -fsSL https://raw.githubusercontent.com/chourmovs/FlowCast-Community/v0.1.0-rc.9/install.sh | sudo bash -s -- --version 0.1.0-rc.9
 ```
 
 The tagged command installs the release declared in `version.env`. That file is the repository's single source of truth for the current JuggleCast Community release.
@@ -243,9 +243,9 @@ The installer writes `/opt/flowcast`, generates local credentials, pulls immutab
 ### Review the installer before execution
 
 ```bash
-curl -fsSLO https://raw.githubusercontent.com/chourmovs/FlowCast-Community/v0.1.0-rc.8/install.sh
+curl -fsSLO https://raw.githubusercontent.com/chourmovs/FlowCast-Community/v0.1.0-rc.9/install.sh
 less install.sh
-sudo bash install.sh --version 0.1.0-rc.8
+sudo bash install.sh --version 0.1.0-rc.9
 ```
 
 ---
@@ -281,7 +281,7 @@ Create a backup before changing versions:
 
 ```bash
 sudo /opt/flowcast/scripts/community/backup.sh
-sudo /opt/flowcast/scripts/community/update.sh --version 0.1.0-rc.8
+sudo /opt/flowcast/scripts/community/update.sh --version 0.1.0-rc.9
 sudo /opt/flowcast/scripts/community/doctor.sh
 ```
 
@@ -343,7 +343,7 @@ The current repository release is declared only in:
 
 ```env
 # version.env
-FLOWCAST_VERSION=0.1.0-rc.8
+FLOWCAST_VERSION=0.1.0-rc.9
 ```
 
 Runtime configuration examples such as `.env.example` do not define the release version.
