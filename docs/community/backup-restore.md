@@ -2,7 +2,7 @@
 
 [Repository home](../../README.md) · [Documentation index](../README.md)
 
-FlowCast RC8 has two complementary backup paths: the host-level Community maintenance scripts and the authenticated in-app `.fcbak` workflow.
+JuggleCast RC8 has two complementary backup paths: the host-level Community maintenance scripts and the authenticated in-app `.fcbak` workflow.
 
 ## In-app `.fcbak` backups
 
@@ -25,7 +25,7 @@ Partial uploads are not treated as valid backups. An archive is published only a
 
 Restore is deliberately stricter than backup creation.
 
-Before a restore starts, FlowCast:
+Before a restore starts, JuggleCast:
 
 1. validates the archive and its manifest/checksums;
 2. checks archive and media limits;
@@ -35,7 +35,7 @@ Before a restore starts, FlowCast:
 
 The restore itself runs in an ephemeral Docker worker rather than inside the control HTTP process.
 
-For Full restores, media replacement is transactional: new media are staged on the media volume, then swapped into place. FlowCast creates a pre-restore snapshot and attempts an automatic rollback if the restore fails.
+For Full restores, media replacement is transactional: new media are staged on the media volume, then swapped into place. JuggleCast creates a pre-restore snapshot and attempts an automatic rollback if the restore fails.
 
 Docker Control must be available for the worker-driven restore lifecycle. The standard Community installation enables Docker Control; installations created with `--no-docker-control` can still create ordinary Essential backups but cannot perform operations that require Docker worker orchestration.
 

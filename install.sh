@@ -36,7 +36,7 @@ Usage:
 
 Options:
   --version VERSION
-      Install a specific FlowCast Community version.
+      Install a specific JuggleCast Community version.
 
   --install-dir DIR
       Installation directory.
@@ -73,12 +73,12 @@ EOF
 
 
 log() {
-  printf '[flowcast] %s\n' "$*"
+  printf '[jugglecast] %s\n' "$*"
 }
 
 
 die() {
-  printf '[flowcast] ERROR: %s\n' "$*" >&2
+  printf '[jugglecast] ERROR: %s\n' "$*" >&2
   exit 1
 }
 
@@ -186,14 +186,14 @@ done
   "No release version was supplied. Use --version VERSION or provide version.env next to install.sh."
 
 [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z][0-9A-Za-z.-]*)?$ ]] \
-  || die "Invalid FlowCast version: $VERSION"
+  || die "Invalid JuggleCast version: $VERSION"
 
 [[ "$VERSION" != "latest" ]] || die \
   "The mutable 'latest' version is not supported. Use an immutable release version."
 
 
 [[ "$(uname -s)" == "Linux" ]] || die \
-  "FlowCast Community requires Linux."
+  "JuggleCast Community requires Linux."
 
 case "$(uname -m)" in
   x86_64|amd64)
@@ -201,12 +201,12 @@ case "$(uname -m)" in
 
   aarch64|arm64)
     die \
-      "FlowCast $VERSION is currently published for linux/amd64 only."
+      "JuggleCast $VERSION is currently published for linux/amd64 only."
     ;;
 
   *)
     die \
-      "Unsupported architecture: $(uname -m). FlowCast $VERSION is currently published for linux/amd64 only."
+      "Unsupported architecture: $(uname -m). JuggleCast $VERSION is currently published for linux/amd64 only."
     ;;
 esac
 
@@ -262,7 +262,7 @@ fi
 
 
 if [[ -e "$INSTALL_DIR/.env" ]]; then
-  message="An existing FlowCast installation was found at $INSTALL_DIR. Use scripts/community/update.sh, or remove or restore the existing installation before retrying."
+  message="An existing JuggleCast installation was found at $INSTALL_DIR. Use scripts/community/update.sh, or remove or restore the existing installation before retrying."
 
   if [[ "$NON_INTERACTIVE" == true ]]; then
     die \
@@ -275,16 +275,17 @@ fi
 
 
 TAG="v$VERSION"
-ARCHIVE="flowcast-community-$TAG.tar.gz"
+ARCHIVE="jugglecast-community-$TAG.tar.gz"
+LEGACY_ARCHIVE="flowcast-community-$TAG.tar.gz"
 BASE="${RELEASE_BASE_URL:-https://github.com/$REPOSITORY/releases/download/$TAG}"
 
 log \
-  "Preparing FlowCast $VERSION (linux/amd64) in $INSTALL_DIR"
+  "Preparing JuggleCast $VERSION (linux/amd64) in $INSTALL_DIR"
 
 
 if [[ "$DRY_RUN" == true ]]; then
   log \
-    "Would download $ARCHIVE, checksums.sha256, release-manifest.json and images.lock from $BASE"
+    "Would download $ARCHIVE (with $LEGACY_ARCHIVE fallback), checksums.sha256, release-manifest.json and images.lock from $BASE"
   exit 0
 fi
 
@@ -298,13 +299,8 @@ cleanup() {
 trap cleanup EXIT
 
 
-for asset in \
-  "$ARCHIVE" \
-  checksums.sha256 \
-  release-manifest.json \
-  images.lock
-do
-  log "Downloading $asset"
+download_asset() {
+  local asset="$1"
 
   curl \
     --fail \
@@ -317,6 +313,31 @@ do
     --max-time 600 \
     --output "$TMP/$asset" \
     "$BASE/$asset"
+}
+
+
+log "Downloading $ARCHIVE"
+
+if ! download_asset "$ARCHIVE"; then
+  log \
+    "$ARCHIVE is unavailable; trying the RC8-compatible asset name."
+
+  ARCHIVE="$LEGACY_ARCHIVE"
+  log "Downloading $ARCHIVE"
+
+  download_asset "$ARCHIVE" || die \
+    "Neither the JuggleCast nor historical FlowCast archive is available."
+fi
+
+
+for asset in \
+  checksums.sha256 \
+  release-manifest.json \
+  images.lock
+do
+  log "Downloading $asset"
+  download_asset "$asset" || die \
+    "Unable to download required release asset: $asset"
 done
 
 
@@ -626,13 +647,13 @@ if [[ "$START" == true ]]; then
   "${compose[@]}" up -d
 
   wait_for_stack || die \
-    "FlowCast startup failed."
+    "JuggleCast startup failed."
 
   check_docker_control || die \
     "Docker Control validation failed. No engine Start, Stop or Restart action was attempted."
 else
   log \
-    "Installation prepared without starting the FlowCast stack."
+    "Installation prepared without starting the JuggleCast stack."
 
   if [[ "$DOCKER_CONTROL" == true ]]; then
     log \
@@ -652,7 +673,7 @@ lan_ip="$(
 display_host="${lan_ip:-localhost}"
 
 
-log "FlowCast $VERSION is ready"
+log "JuggleCast $VERSION is ready"
 log "Control UI:       http://$display_host:8080"
 log "Icecast status:   http://$display_host:8010/status-json.xsl"
 log "Default mount:    /test.mp3"

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
-<title id="title">FlowCast mark</title>
-<desc id="desc">A stylized F combined with a radio broadcast signal.</desc>
+<title id="title">JuggleCast mark</title>
+<desc id="desc">A neutral radio broadcast signal.</desc>
 <defs>
 <linearGradient id="fc-gradient" x1="0" y1="0" x2="1" y2="1">
   <stop offset="0%" stop-color="#67E8F9"/>
@@ -14,7 +14,6 @@
 </filter>
 </defs>
 <rect x="8" y="8" width="240" height="240" rx="64" fill="#0E1630" stroke="#293A62" stroke-width="8"/>
-<path d="M65 177V70h101M65 116h76" fill="none" stroke="url(#fc-gradient)" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="174" cy="174" r="18" fill="#22D3EE" filter="url(#fc-glow)"/>
-<path d="M194 148c17 17 17 35 0 52M211 131c28 28 28 58 0 86" fill="none" stroke="#A78BFA" stroke-width="12" stroke-linecap="round"/>
+<circle cx="128" cy="128" r="18" fill="#22D3EE" filter="url(#fc-glow)"/>
+<path d="M98 98c-17 17-17 43 0 60M158 98c17 17 17 43 0 60M78 78c-28 28-28 72 0 100M178 78c28 28 28 72 0 100" fill="none" stroke="url(#fc-gradient)" stroke-width="12" stroke-linecap="round"/>
 </svg>

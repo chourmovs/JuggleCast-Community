@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
-<title id="title">FlowCast — Self-hosted radio automation</title>
-<desc id="desc">FlowCast social preview with radio signal and product positioning.</desc>
+<title id="title">JuggleCast — Self-hosted radio automation</title>
+<desc id="desc">JuggleCast social preview with radio signal and product positioning.</desc>
 <defs>
 
 <linearGradient id="fc-gradient" x1="0" y1="0" x2="1" y2="1">
@@ -35,12 +35,11 @@
 
 <g transform="translate(72 70)">
   <rect x="0" y="0" width="126" height="126" rx="32" fill="#0E1630" stroke="#334568" stroke-width="4"/>
-  <path d="M32 91V34h55M32 61h43" fill="none" stroke="url(#fc-gradient)" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="92" cy="92" r="10" fill="#22D3EE" filter="url(#fc-glow)"/>
-  <path d="M103 78c9 9 9 19 0 28M112 69c15 15 15 31 0 46" fill="none" stroke="#A78BFA" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="63" cy="63" r="10" fill="#22D3EE" filter="url(#fc-glow)"/>
+  <path d="M45 45c-10 10-10 26 0 36M81 45c10 10 10 26 0 36M33 33c-17 17-17 43 0 60M93 33c17 17 17 43 0 60" fill="none" stroke="url(#fc-gradient)" stroke-width="6" stroke-linecap="round"/>
 </g>
 
-<text x="232" y="160" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="76" font-weight="800" letter-spacing="-3" fill="#F4F7FF">FlowCast</text>
+<text x="232" y="160" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="76" font-weight="800" letter-spacing="-3" fill="#F4F7FF">JuggleCast</text>
 <text x="75" y="282" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="58" font-weight="800" letter-spacing="-2" fill="#F4F7FF">
   <tspan x="75" dy="0">Automate your radio.</tspan>
   <tspan x="75" dy="72" fill="url(#fc-gradient)">Own the broadcast path.</tspan>
@@ -59,7 +58,7 @@
   <circle cx="42" cy="41" r="6" fill="#FB7185"/>
   <circle cx="64" cy="41" r="6" fill="#FBBF24"/>
   <circle cx="86" cy="41" r="6" fill="#4ADE80"/>
-  <text x="118" y="48" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#AAB7D4">FlowCast Control</text>
+  <text x="118" y="48" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#AAB7D4">JuggleCast Control</text>
   <rect x="28" y="82" width="344" height="86" rx="16" fill="#111B39" stroke="#26385F"/>
   <text x="48" y="112" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" fill="#67E8F9">NOW PLAYING</text>
   <rect x="48" y="128" width="180" height="12" rx="6" fill="#F4F7FF" opacity=".9"/>

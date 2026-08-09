@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Audit the rendered FlowCast Community Compose runtime contract.
+"""Audit the rendered JuggleCast Community Compose runtime contract.
 
 The current release version is read exclusively from:
 
@@ -104,12 +104,12 @@ def current_version() -> str:
 
 def expected_images(version: str) -> dict[str, str]:
     return {
-        "storage-init": f"ghcr.io/chourmovs/flowcast-engine:{version}",
-        "control": f"ghcr.io/chourmovs/flowcast-control:{version}",
-        "engine": f"ghcr.io/chourmovs/flowcast-engine:{version}",
-        "audio-daemon": f"ghcr.io/chourmovs/flowcast-analyzer:{version}",
-        "bliss": f"ghcr.io/chourmovs/flowcast-bliss:{version}",
-        "icecast": f"ghcr.io/chourmovs/flowcast-icecast:{version}",
+        "storage-init": f"ghcr.io/chourmovs/jugglecast-engine:{version}",
+        "control": f"ghcr.io/chourmovs/jugglecast-control:{version}",
+        "engine": f"ghcr.io/chourmovs/jugglecast-engine:{version}",
+        "audio-daemon": f"ghcr.io/chourmovs/jugglecast-analyzer:{version}",
+        "bliss": f"ghcr.io/chourmovs/jugglecast-bliss:{version}",
+        "icecast": f"ghcr.io/chourmovs/jugglecast-icecast:{version}",
     }
 
 

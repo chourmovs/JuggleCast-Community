@@ -2,7 +2,7 @@
 
 [Repository home](README.md) · [Documentation index](docs/README.md) · [Code of Conduct](CODE_OF_CONDUCT.md)
 
-Search existing issues, then use the structured bug or feature form. Bug reports must include the FlowCast version, OS/architecture, Docker and Compose versions, Docker Control mode, sanitized `doctor.sh` result, reproduction steps, expected and actual behavior, and minimal redacted logs.
+Search existing issues, then use the structured bug or feature form. Bug reports must include the JuggleCast version, OS/architecture, Docker and Compose versions, Docker Control mode, sanitized `doctor.sh` result, reproduction steps, expected and actual behavior, and minimal redacted logs.
 
 Never post `.env`, licence keys, Icecast passwords, tokens, cookies, databases, backups, private media, personal data, private addresses, machine names or confidential URLs. Report vulnerabilities through [private security reporting](SECURITY.md), not public issues.
 

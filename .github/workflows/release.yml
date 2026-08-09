@@ -22,7 +22,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Load FlowCast version
+      - name: Load JuggleCast version
         shell: bash
         run: |
           set -euo pipefail
@@ -58,7 +58,7 @@ jobs:
           }
 
           echo "FLOWCAST_VERSION=$version" >> "$GITHUB_ENV"
-          echo "Resolved FlowCast version: $version"
+          echo "Resolved JuggleCast version: $version"
 
       - name: Validate release request
         shell: bash
@@ -146,9 +146,10 @@ jobs:
       - name: Upload qualification artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: flowcast-community-v${{ env.FLOWCAST_VERSION }}
+          name: jugglecast-community-v${{ env.FLOWCAST_VERSION }}
           if-no-files-found: error
           path: |
+            dist/jugglecast-community-v${{ env.FLOWCAST_VERSION }}.tar.gz
             dist/flowcast-community-v${{ env.FLOWCAST_VERSION }}.tar.gz
             dist/checksums.sha256
             dist/images.lock
@@ -167,8 +168,9 @@ jobs:
             "v$FLOWCAST_VERSION" \
             --target "$GITHUB_SHA" \
             --prerelease \
-            --title "FlowCast Community v$FLOWCAST_VERSION" \
+            --title "JuggleCast Community v$FLOWCAST_VERSION" \
             --notes "Preview for linux/amd64 only; not production-grade." \
+            "dist/jugglecast-community-v$FLOWCAST_VERSION.tar.gz" \
             "dist/flowcast-community-v$FLOWCAST_VERSION.tar.gz" \
             dist/checksums.sha256 \
             dist/images.lock \

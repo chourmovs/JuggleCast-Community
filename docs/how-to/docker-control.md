@@ -15,7 +15,7 @@ A trusted administrator, local Docker Engine and review of the Docker socket ris
 1. For the validated rc.6 installer default, install normally to enable Docker Control, or append `--no-docker-control` to opt out.
 2. Confirm that the detected Unix socket and numeric GID are correct in the installation result; do not manually broaden socket permissions.
 3. Run `sudo /opt/flowcast/scripts/community/doctor.sh`.
-4. Restrict the FlowCast interface to trusted administrators.
+4. Restrict the JuggleCast interface to trusted administrators.
 
 ## Expected result
 

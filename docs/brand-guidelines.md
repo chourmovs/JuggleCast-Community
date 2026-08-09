@@ -1,10 +1,10 @@
-# FlowCast brand guidelines
+# JuggleCast brand guidelines
 
 [Repository home](../README.md) · [Documentation index](README.md)
 
 ## Identity
 
-FlowCast should feel like a quiet nocturnal broadcast studio: precise, operator-led and illuminated by signal state rather than decoration. The waveform represents continuity and transitions; the red **ON AIR** state must be used only where broadcast state is meaningful.
+JuggleCast should feel like a quiet nocturnal broadcast studio: precise, operator-led and illuminated by signal state rather than decoration. The waveform represents continuity and transitions; the red **ON AIR** state must be used only where broadcast state is meaningful.
 
 ## Palette
 

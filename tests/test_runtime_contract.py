@@ -196,11 +196,22 @@ class ReleaseArchiveRuntimeTests(unittest.TestCase):
 
         archive = (
             dist
+            / f"jugglecast-community-v{version}.tar.gz"
+        )
+        legacy_archive = (
+            dist
             / f"flowcast-community-v{version}.tar.gz"
         )
 
         self.assertTrue(
             archive.is_file()
+        )
+        self.assertTrue(
+            legacy_archive.is_file()
+        )
+        self.assertEqual(
+            archive.read_bytes(),
+            legacy_archive.read_bytes(),
         )
 
         with tarfile.open(

@@ -69,7 +69,15 @@ class InstallerContractTests(unittest.TestCase):
 
     def test_archive_integrity_and_manifest_version(self):
         self.assertIn(
+            "jugglecast-community-$TAG.tar.gz",
+            self.install,
+        )
+        self.assertIn(
             "flowcast-community-$TAG.tar.gz",
+            self.install,
+        )
+        self.assertIn(
+            "RC8-compatible asset name",
             self.install,
         )
 
@@ -100,7 +108,7 @@ class InstallerContractTests(unittest.TestCase):
 
     def test_existing_install_and_secrets(self):
         self.assertIn(
-            "existing FlowCast installation",
+            "existing JuggleCast installation",
             self.install,
         )
 
@@ -181,6 +189,8 @@ class ReleaseContractTests(unittest.TestCase):
         )
 
         expected_assets = (
+            "jugglecast-community-v"
+            "${{ env.FLOWCAST_VERSION }}.tar.gz",
             "flowcast-community-v"
             "${{ env.FLOWCAST_VERSION }}.tar.gz",
             "checksums.sha256",

@@ -24,7 +24,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Load FlowCast version
+      - name: Load JuggleCast version
         shell: bash
         run: |
           set -euo pipefail
@@ -65,7 +65,7 @@ jobs:
           }
 
           echo "FLOWCAST_VERSION=$version" >> "$GITHUB_ENV"
-          echo "Resolved FlowCast version: $version"
+          echo "Resolved JuggleCast version: $version"
 
       - name: Check installer syntax
         shell: bash
@@ -352,7 +352,7 @@ jobs:
             --fixed-strings \
             "$site_url/" \
             dist/sitemap-0.xml || {
-              echo "::error::sitemap-0.xml does not contain the FlowCast homepage"
+              echo "::error::sitemap-0.xml does not contain the JuggleCast homepage"
               exit 1
             }
 
@@ -372,7 +372,7 @@ jobs:
             "flowcast.spotycast.ovh" \
             dist
           then
-            echo "::error::Generated website still references the retired FlowCast domain"
+            echo "::error::Generated website still references the retired JuggleCast domain"
             exit 1
           fi
 
@@ -479,7 +479,7 @@ jobs:
             --fixed-strings \
             "$version" \
             dist || {
-              echo "::error::Generated website does not contain FlowCast version $version"
+              echo "::error::Generated website does not contain JuggleCast version $version"
               exit 1
             }
 
