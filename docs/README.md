@@ -1,4 +1,4 @@
-# FlowCast Community documentation
+# JuggleCast Community documentation
 
 [Repository home](../README.md)
 
