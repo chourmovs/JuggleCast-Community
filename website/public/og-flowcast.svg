@@ -35,9 +35,8 @@
 
 <g transform="translate(72 70)">
   <rect x="0" y="0" width="126" height="126" rx="32" fill="#0E1630" stroke="#334568" stroke-width="4"/>
-  <path d="M32 91V34h55M32 61h43" fill="none" stroke="url(#fc-gradient)" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="92" cy="92" r="10" fill="#22D3EE" filter="url(#fc-glow)"/>
-  <path d="M103 78c9 9 9 19 0 28M112 69c15 15 15 31 0 46" fill="none" stroke="#A78BFA" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="63" cy="63" r="10" fill="#22D3EE" filter="url(#fc-glow)"/>
+  <path d="M45 45c-10 10-10 26 0 36M81 45c10 10 10 26 0 36M33 33c-17 17-17 43 0 60M93 33c17 17 17 43 0 60" fill="none" stroke="url(#fc-gradient)" stroke-width="6" stroke-linecap="round"/>
 </g>
 
 <text x="232" y="160" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="76" font-weight="800" letter-spacing="-3" fill="#F4F7FF">JuggleCast</text>
