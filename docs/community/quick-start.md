@@ -2,7 +2,7 @@
 
 [Repository home](../../README.md) · [Documentation index](../README.md)
 
-FlowCast Community RC8 requires linux/amd64, Docker Engine with Compose v2, 4 GB RAM, 10 GB free disk plus media/backup capacity, and free TCP ports 8080 and 8010.
+JuggleCast Community RC8 requires linux/amd64, Docker Engine with Compose v2, 4 GB RAM, 10 GB free disk plus media/backup capacity, and free TCP ports 8080 and 8010.
 
 Review and run the tagged installer shown in the repository README with `sudo bash`; the script itself never escalates privileges or installs Docker.
 
