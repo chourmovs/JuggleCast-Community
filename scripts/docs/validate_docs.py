@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Dependency-free policy checks for FlowCast public documentation."""
+"""Dependency-free policy checks for JuggleCast public documentation."""
 
 from __future__ import annotations
 
