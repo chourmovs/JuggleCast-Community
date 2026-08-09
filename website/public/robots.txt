@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://chourmovs.github.io/FlowCast-Community/sitemap-index.xml
+Sitemap: https://chourmovs.github.io/JuggleCast-Community/sitemap-index.xml
