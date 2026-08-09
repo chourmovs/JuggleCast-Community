@@ -73,12 +73,12 @@ EOF
 
 
 log() {
-  printf '[flowcast] %s\n' "$*"
+  printf '[jugglecast] %s\n' "$*"
 }
 
 
 die() {
-  printf '[flowcast] ERROR: %s\n' "$*" >&2
+  printf '[jugglecast] ERROR: %s\n' "$*" >&2
   exit 1
 }
 
@@ -326,7 +326,7 @@ if ! download_asset "$ARCHIVE"; then
   log "Downloading $ARCHIVE"
 
   download_asset "$ARCHIVE" || die \
-    "Neither the JuggleCast nor historical JuggleCast archive is available."
+    "Neither the JuggleCast nor historical FlowCast archive is available."
 fi
 
 
