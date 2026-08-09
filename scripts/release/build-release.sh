@@ -258,17 +258,40 @@ sha256sum "$ARCHIVE" "$LEGACY_ARCHIVE" \
   >"$DIST/checksums.sha256"
 
 digest="$(
-  cut \
-    -d' ' \
-    -f1 \
-    "$DIST/checksums.sha256"
+  sha256sum "$ARCHIVE" \
+    | cut -d' ' -f1
 )"
+
+legacy_digest="$(
+  sha256sum "$LEGACY_ARCHIVE" \
+    | cut -d' ' -f1
+)"
+
+[[ "$digest" =~ ^[0-9a-f]{64}$ ]] || {
+  echo "invalid primary archive digest: $digest" >&2
+  exit 1
+}
+
+[[ "$legacy_digest" == "$digest" ]] || {
+  echo "release archive aliases are not byte-identical" >&2
+  exit 1
+}
 
 jq \
   --arg digest "$digest" \
   '.archive.sha256 = $digest' \
   "$STAGE/release-manifest.json" \
   >"$DIST/release-manifest.json"
+
+manifest_digest="$(
+  jq -r '.archive.sha256' \
+    "$DIST/release-manifest.json"
+)"
+
+[[ "$manifest_digest" == "$digest" ]] || {
+  echo "release manifest archive digest is invalid" >&2
+  exit 1
+}
 
 echo \
   "Built JuggleCast Community release archives: $ARCHIVE and $LEGACY_ARCHIVE"
