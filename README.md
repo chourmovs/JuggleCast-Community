@@ -1,14 +1,14 @@
-# FlowCast Radio Automation
+# JuggleCast Radio Automation
 
 **Self-hosted radio automation, intelligent scheduling and dedicated audio playout — under your control.**
 
-FlowCast is a self-hosted radio automation platform for operators who want to schedule, automate and broadcast an Icecast station without maintaining a Liquidsoap scripting layer.
+JuggleCast is a self-hosted radio automation platform for operators who want to schedule, automate and broadcast an Icecast station without maintaining a Liquidsoap scripting layer.
 
 Its scheduler, audio analysis services and dedicated Rust playout engine are designed as one system, with configurable transitions, BPM-aware programming and optional Bliss-powered acoustic similarity.
 
 **Automate · Broadcast · Stay independent**
 
-[🎧 Listen to the live station](http://radio.chouproxai.duckdns.org/api/public/stations/rub-a-dub_mix) · [Install FlowCast](#installation) · [Documentation](docs/README.md) · [Releases](https://github.com/chourmovs/FlowCast-Community/releases) · [Security](SECURITY.md) · [Support](SUPPORT.md)
+[🎧 Listen to the live station](http://radio.chouproxai.duckdns.org/api/public/stations/rub-a-dub_mix) · [Install JuggleCast](#installation) · [Documentation](docs/README.md) · [Releases](https://github.com/chourmovs/FlowCast-Community/releases) · [Security](SECURITY.md) · [Support](SUPPORT.md)
 
 [![Release](https://img.shields.io/github/v/release/chourmovs/FlowCast-Community?display_name=tag)](https://github.com/chourmovs/FlowCast-Community/releases)
 [![Validate](https://github.com/chourmovs/FlowCast-Community/actions/workflows/validate.yml/badge.svg)](https://github.com/chourmovs/FlowCast-Community/actions/workflows/validate.yml)
@@ -18,19 +18,19 @@ Its scheduler, audio analysis services and dedicated Rust playout engine are des
 
 > **Live demonstration**
 >
-> The public station page is powered by FlowCast and lets you hear the playout engine while inspecting the current track and station activity.
+> The public station page is powered by JuggleCast and lets you hear the playout engine while inspecting the current track and station activity.
 >
-> **[Open the live FlowCast station →](https://chourmovs.github.io/FlowCast-Community/)**
+> **[Open the live JuggleCast station →](https://chourmovs.github.io/FlowCast-Community/)**
 >
 > Availability is provided on a best-effort basis and may be interrupted during preview deployments or maintenance.
 
-FlowCast Community packages the installer, deployment contracts, documentation and authenticated control plane required to operate the versioned broadcast services on an operator-managed Linux host. The service images are separately licensed; this repository does not claim that their source code is open.
+JuggleCast Community packages the installer, deployment contracts, documentation and authenticated control plane required to operate the versioned broadcast services on an operator-managed Linux host. The service images are separately licensed; this repository does not claim that their source code is open.
 
 ---
 
-## What FlowCast does
+## What JuggleCast does
 
-FlowCast provides the complete path from an operator-owned media library to a continuously programmed Icecast stream:
+JuggleCast provides the complete path from an operator-owned media library to a continuously programmed Icecast stream:
 
 1. import and analyse audio;
 2. organise tracks into playlists;
@@ -44,19 +44,19 @@ FlowCast provides the complete path from an operator-owned media library to a co
 10. observe station-scoped audience statistics;
 11. create portable backups and perform guarded restores.
 
-The objective is not simply to shuffle tracks without silence. FlowCast is designed to make an automated station sound deliberately programmed.
+The objective is not simply to shuffle tracks without silence. JuggleCast is designed to make an automated station sound deliberately programmed.
 
 ---
 
-## Why FlowCast is different
+## Why JuggleCast is different
 
-FlowCast is not simply a web interface placed in front of a generic streaming script. Its scheduler, audio analysis and playout engine are developed together as a complete radio automation system.
+JuggleCast is not simply a web interface placed in front of a generic streaming script. Its scheduler, audio analysis and playout engine are developed together as a complete radio automation system.
 
 ### No Liquidsoap scripting layer
 
 Many self-hosted radio platforms ultimately require operators to understand, generate or troubleshoot Liquidsoap scripts.
 
-FlowCast takes a different approach.
+JuggleCast takes a different approach.
 
 Its dedicated Rust playout engine receives an explicit station configuration and executes the broadcast directly. Operators configure playlists, scheduling, transitions and station behaviour without maintaining a separate domain-specific playout script.
 
@@ -66,13 +66,13 @@ This means:
 - no generated script to inspect when something behaves unexpectedly;
 - no fragile custom script fragments to maintain across upgrades;
 - fewer abstraction layers between the control interface and the audio engine;
-- a playout runtime developed specifically around FlowCast's scheduling model.
+- a playout runtime developed specifically around JuggleCast's scheduling model.
 
 You configure the desired broadcast behaviour — not the implementation script behind it.
 
 ### Transitions are a first-class feature
 
-FlowCast treats the transition between two tracks as part of the programming, not as a fixed crossfade added at the end of the audio pipeline.
+JuggleCast treats the transition between two tracks as part of the programming, not as a fixed crossfade added at the end of the audio pipeline.
 
 Transition parameters can be tuned to shape the identity of the station:
 
@@ -87,28 +87,28 @@ Transition parameters can be tuned to shape the identity of the station:
 
 ### Music-aware programming
 
-FlowCast can use track tempo as part of the scheduling and selection process. BPM-aware programming helps build sequences with more coherent changes in pace and energy while keeping editorial rules in control.
+JuggleCast can use track tempo as part of the scheduling and selection process. BPM-aware programming helps build sequences with more coherent changes in pace and energy while keeping editorial rules in control.
 
-FlowCast Pro can extend music-aware selection using acoustic similarity features produced through Bliss analysis.
+JuggleCast Pro can extend music-aware selection using acoustic similarity features produced through Bliss analysis.
 
 ---
 
 ## A different approach to radio automation
 
-| Conventional script-centric stack | FlowCast |
+| Conventional script-centric stack | JuggleCast |
 | --- | --- |
-| Playout behaviour expressed through a separate scripting language | Dedicated playout engine controlled through explicit FlowCast configuration |
+| Playout behaviour expressed through a separate scripting language | Dedicated playout engine controlled through explicit JuggleCast configuration |
 | Transitions commonly reduced to a global crossfade | Fine-grained transition timing, overlap and bridge controls |
 | Rotation primarily based on metadata, clocks and random selection | Scheduling enriched with BPM-aware selection |
-| Advanced musical sequencing requires custom logic | Optional Bliss-driven acoustic similarity with FlowCast Pro |
-| Troubleshooting often requires inspecting generated scripts | Runtime state, history, logs and diagnostics exposed through FlowCast |
+| Advanced musical sequencing requires custom logic | Optional Bliss-driven acoustic similarity with JuggleCast Pro |
+| Troubleshooting often requires inspecting generated scripts | Runtime state, history, logs and diagnostics exposed through JuggleCast |
 | Changes may require editing or regenerating playout code | Station behaviour configured without writing playout scripts |
 
 ---
 
-## Who FlowCast is for
+## Who JuggleCast is for
 
-FlowCast is intended for:
+JuggleCast is intended for:
 
 - self-hosters operating their own radio infrastructure;
 - web radio operators who want explicit control over scheduling and playout;
@@ -116,13 +116,13 @@ FlowCast is intended for:
 - associations, collectives and small broadcasters;
 - developers and operators looking for a self-hosted Icecast automation stack without Liquidsoap scripting.
 
-FlowCast Community is currently distributed as a **Community Preview**.
+JuggleCast Community is currently distributed as a **Community Preview**.
 
 ---
 
 ## Core capabilities
 
-### FlowCast Community
+### JuggleCast Community
 
 The Community edition provides the complete autonomous broadcast path:
 
@@ -151,9 +151,9 @@ The Community edition provides the complete autonomous broadcast path:
 
 Community starts and broadcasts without a paid licence and without a mandatory remote licence-service request.
 
-### FlowCast Pro
+### JuggleCast Pro
 
-FlowCast Pro builds on the Community broadcast foundation with optional advanced capabilities, including:
+JuggleCast Pro builds on the Community broadcast foundation with optional advanced capabilities, including:
 
 - Bliss-driven acoustic similarity;
 - music-aware sequence optimisation;
@@ -189,24 +189,24 @@ See [RC8 highlights and runtime notes](docs/community/rc8.md).
 
 ## Screenshots
 
-Explore the FlowCast control plane, from station configuration and media management to intelligent programming, playout supervision and broadcast operations.
+Explore the JuggleCast control plane, from station configuration and media management to intelligent programming, playout supervision and broadcast operations.
 
 <table>
   <tr>
-    <td width="50%" valign="top"><a href="docs/assets/screenshots/Capture1.png"><img src="docs/assets/screenshots/Capture1.png" alt="FlowCast dashboard showing station status, Now Playing and the upcoming queue" width="100%"></a></td>
-    <td width="50%" valign="top"><a href="docs/assets/screenshots/Capture2.png"><img src="docs/assets/screenshots/Capture2.png" alt="FlowCast playout history showing recently broadcast tracks" width="100%"></a></td>
+    <td width="50%" valign="top"><a href="docs/assets/screenshots/Capture1.png"><img src="docs/assets/screenshots/Capture1.png" alt="JuggleCast dashboard showing station status, Now Playing and the upcoming queue" width="100%"></a></td>
+    <td width="50%" valign="top"><a href="docs/assets/screenshots/Capture2.png"><img src="docs/assets/screenshots/Capture2.png" alt="JuggleCast playout history showing recently broadcast tracks" width="100%"></a></td>
   </tr>
   <tr>
-    <td width="50%" valign="top"><a href="docs/assets/screenshots/Capture3.png"><img src="docs/assets/screenshots/Capture3.png" alt="FlowCast media library with import, search and analysis controls" width="100%"></a></td>
-    <td width="50%" valign="top"><a href="docs/assets/screenshots/Capture4.png"><img src="docs/assets/screenshots/Capture4.png" alt="FlowCast playlist management interface" width="100%"></a></td>
+    <td width="50%" valign="top"><a href="docs/assets/screenshots/Capture3.png"><img src="docs/assets/screenshots/Capture3.png" alt="JuggleCast media library with import, search and analysis controls" width="100%"></a></td>
+    <td width="50%" valign="top"><a href="docs/assets/screenshots/Capture4.png"><img src="docs/assets/screenshots/Capture4.png" alt="JuggleCast playlist management interface" width="100%"></a></td>
   </tr>
   <tr>
-    <td width="50%" valign="top"><a href="docs/assets/screenshots/Capture5.png"><img src="docs/assets/screenshots/Capture5.png" alt="FlowCast programming and scheduling interface" width="100%"></a></td>
-    <td width="50%" valign="top"><a href="docs/assets/screenshots/Capture6.png"><img src="docs/assets/screenshots/Capture6.png" alt="FlowCast engine supervision and runtime settings" width="100%"></a></td>
+    <td width="50%" valign="top"><a href="docs/assets/screenshots/Capture5.png"><img src="docs/assets/screenshots/Capture5.png" alt="JuggleCast programming and scheduling interface" width="100%"></a></td>
+    <td width="50%" valign="top"><a href="docs/assets/screenshots/Capture6.png"><img src="docs/assets/screenshots/Capture6.png" alt="JuggleCast engine supervision and runtime settings" width="100%"></a></td>
   </tr>
   <tr>
-    <td width="50%" valign="top"><a href="docs/assets/screenshots/Capture7.png"><img src="docs/assets/screenshots/Capture7.png" alt="FlowCast audio transition and bridge settings" width="100%"></a></td>
-    <td width="50%" valign="top"><a href="docs/assets/screenshots/Capture8.png"><img src="docs/assets/screenshots/Capture8.png" alt="FlowCast station configuration and operational controls" width="100%"></a></td>
+    <td width="50%" valign="top"><a href="docs/assets/screenshots/Capture7.png"><img src="docs/assets/screenshots/Capture7.png" alt="JuggleCast audio transition and bridge settings" width="100%"></a></td>
+    <td width="50%" valign="top"><a href="docs/assets/screenshots/Capture8.png"><img src="docs/assets/screenshots/Capture8.png" alt="JuggleCast station configuration and operational controls" width="100%"></a></td>
   </tr>
 </table>
 
@@ -234,7 +234,7 @@ Pro is optional and separately licensed. Read [Community versus Pro](docs/commun
 curl -fsSL https://raw.githubusercontent.com/chourmovs/FlowCast-Community/v0.1.0-rc.8/install.sh | sudo bash -s -- --version 0.1.0-rc.8
 ```
 
-The tagged command installs the release declared in `version.env`. That file is the repository's single source of truth for the current FlowCast Community release.
+The tagged command installs the release declared in `version.env`. That file is the repository's single source of truth for the current JuggleCast Community release.
 
 The installer writes `/opt/flowcast`, generates local credentials, pulls immutable versioned service images and waits for service health. It does not install Docker.
 
@@ -295,7 +295,7 @@ Preview releases do not guarantee downgrade-compatible persisted state. Read [Up
 
 ```mermaid
 flowchart TD
-  B[Browser] -->|authenticated control| C[FlowCast Control]
+  B[Browser] -->|authenticated control| C[JuggleCast Control]
   C -->|orchestration| S[Scheduler]
   S --> E[Playout Engine]
   C --> A[Audio Analyzer]
@@ -364,7 +364,7 @@ Historical documentation may mention older releases when describing migrations o
 
 ## Legal and licensing
 
-Repository scripts and documentation are MIT licensed. FlowCast Community OCI images use the licence declared in their published image metadata. Third-party components retain their own licences. Pro uses separate commercial terms, and trademark rights are separate.
+Repository scripts and documentation are MIT licensed. JuggleCast Community OCI images use the licence declared in their published image metadata. Third-party components retain their own licences. Pro uses separate commercial terms, and trademark rights are separate.
 
 Review the [licensing guide](docs/legal/licensing.md), [third-party notices](THIRD_PARTY_NOTICES.md), [trademarks](TRADEMARKS.md), [privacy](PRIVACY.md) and [disclaimer](DISCLAIMER.md).
 
@@ -374,7 +374,7 @@ The software is supplied without warranty. Operators remain responsible for infr
 
 ## Built with
 
-FlowCast's distributed runtime uses Python, Rust, FastAPI, NiceGUI, GStreamer, FFmpeg, Icecast, bliss-audio, SQLite and Docker. Each remains an independent project under its own terms.
+JuggleCast's distributed runtime uses Python, Rust, FastAPI, NiceGUI, GStreamer, FFmpeg, Icecast, bliss-audio, SQLite and Docker. Each remains an independent project under its own terms.
 
 ---
 
