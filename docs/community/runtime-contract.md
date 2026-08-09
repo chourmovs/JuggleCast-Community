@@ -28,7 +28,7 @@ Icecast persists its access log in the `icecast-logs` volume mounted at `/data/i
 
 This gives the RC8 statistics collector access to `/data/icecast/access.log` without granting the control plane write access to Icecast logs.
 
-Statistics data and the local HMAC secret are persisted with the FlowCast catalog state. Raw listener IP addresses are not stored by the statistics subsystem.
+Statistics data and the local HMAC secret are persisted with the JuggleCast catalog state. Raw listener IP addresses are not stored by the statistics subsystem.
 
 The Community defaults are:
 
