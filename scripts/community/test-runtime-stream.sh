@@ -23,7 +23,7 @@ done
 if [[ -n "$FIXTURE" ]]; then
   need ffmpeg
   ffmpeg -hide_banner -loglevel error -f lavfi -i 'sine=frequency=440:duration=30' -ar 44100 -ac 2 -c:a pcm_s16le -y "$FIXTURE"
-  log "Generated local fixture: $FIXTURE (import it through FlowCast before running qualification)."
+  log "Generated local fixture: $FIXTURE (import it through JuggleCast before running qualification)."
   exit 0
 fi
 
