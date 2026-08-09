@@ -8,7 +8,7 @@ Review and run the tagged installer shown in the repository README with `sudo ba
 
 ```bash
 curl -fsSL \
-  https://raw.githubusercontent.com/chourmovs/FlowCast-Community/vVERSION/install.sh \
+  https://raw.githubusercontent.com/chourmovs/JuggleCast-Community/vVERSION/install.sh \
   | sudo bash -s -- --version VERSION
 ```
 
