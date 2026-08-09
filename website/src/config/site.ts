@@ -1,11 +1,11 @@
 import { withBase } from '../lib/paths';
 
 export const site = {
-  name: 'FlowCast Radio Automation',
-  shortName: 'FlowCast',
+  name: 'JuggleCast Radio Automation',
+  shortName: 'JuggleCast',
   slogan: 'Self-hosted scheduling and playout without Liquidsoap',
-  signature: 'FlowCast Radio Automation — self-hosted scheduling and playout without Liquidsoap.',
-  description: 'FlowCast Radio Automation is a self-hosted scheduling and Rust playout platform with configurable transitions, direct Icecast delivery, public station widgets, station statistics and media-aware backup/restore — without Liquidsoap.',
+  signature: 'JuggleCast Radio Automation — self-hosted scheduling and playout without Liquidsoap.',
+  description: 'JuggleCast Radio Automation is a self-hosted scheduling and Rust playout platform with configurable transitions, direct Icecast delivery, public station widgets, station statistics and media-aware backup/restore — without Liquidsoap.',
   repository: 'https://github.com/chourmovs/FlowCast-Community',
   docs: 'https://github.com/chourmovs/FlowCast-Community/tree/main/docs',
   releases: 'https://github.com/chourmovs/FlowCast-Community/releases',
