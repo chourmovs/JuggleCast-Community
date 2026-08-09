@@ -1,8 +1,8 @@
-# FlowCast Community 0.1.0-rc.8
+# JuggleCast Community 0.1.0-rc.8
 
 [Repository home](../../README.md) · [Documentation index](../README.md)
 
-RC8 expands FlowCast beyond scheduling and playout with four operator-facing capability groups while preserving the same self-hosted, no-Liquidsoap architecture.
+RC8 expands JuggleCast beyond scheduling and playout with four operator-facing capability groups while preserving the same self-hosted, no-Liquidsoap architecture.
 
 ## Public station pages and embeddable widgets
 
