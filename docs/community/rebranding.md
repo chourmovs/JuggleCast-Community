@@ -12,7 +12,8 @@ The following historical identifiers intentionally remain unchanged in RC9:
 - named volumes beginning with `flowcast-`;
 - internal binaries and entrypoints such as `flowcast-engine` and `flowcast-analyzer`;
 - persisted configuration keys, database paths and the `.fcbak` backup format;
-- the temporary GitHub repository slug `FlowCast-Community`.
+
+The public repository has moved to `chourmovs/JuggleCast-Community`. Existing URLs that use the former `FlowCast-Community` slug are retained only as GitHub redirects; new documentation and installer commands use the JuggleCast slug.
 
 A clean RC9 installation uses the `ghcr.io/chourmovs/jugglecast-*` image family. The release also keeps byte-identical `flowcast-community-v0.1.0-rc.9.tar.gz` and `jugglecast-community-v0.1.0-rc.9.tar.gz` archives so RC8-era tooling can continue resolving the historical filename.
 
