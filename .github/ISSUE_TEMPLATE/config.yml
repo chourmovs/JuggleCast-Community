@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
   - name: Community support and questions
-    url: https://github.com/chourmovs/FlowCast-Community/discussions
+    url: https://github.com/chourmovs/JuggleCast-Community/discussions
     about: Ask a sanitized question if Discussions are enabled.
   - name: Private security report
-    url: https://github.com/chourmovs/FlowCast-Community/security/advisories/new
+    url: https://github.com/chourmovs/JuggleCast-Community/security/advisories/new
     about: Report vulnerabilities privately; never open a public security issue.
